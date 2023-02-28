@@ -10,19 +10,20 @@ public class Main {
         LocalDate firstJanuary = LocalDate.of(2005, 1, 1);
         LocalDate thirdMay = LocalDate.of(2005, 5, 3);
         List<LocalDate> dates = List.of(firstJuly, secondJanuary, firstJanuary, thirdMay);
-        System.out.println(dates);
+        System.out.println("Before sorting:" + System.lineSeparator() + dates);
 
         IDateSorter sorter = new DateSorterImpl();
-        System.out.println(sorter.sortDates(dates));
+        System.out.println("After sorting:" + System.lineSeparator() + sorter.sortDates(dates));
         System.out.println();
 
         LocalDate secondJuly = LocalDate.of(2005, 7, 2);
         LocalDate tenthJuly = LocalDate.of(2005, 7, 10);
         LocalDate firstOctober = LocalDate.of(2005, 10, 1);
         LocalDate fifthOctober = LocalDate.of(2005, 10, 5);
+        LocalDate lessYear = LocalDate.of(2000, 10, 5);
         List<LocalDate> dates2 = List.of(firstJuly, secondJanuary, firstJanuary,
-                thirdMay, secondJuly, tenthJuly, fifthOctober, firstOctober);
-        System.out.println(dates2);
-        System.out.println(sorter.sortDates(dates2));
+                thirdMay, secondJuly, tenthJuly, fifthOctober, firstOctober, lessYear);
+        System.out.println("Before sorting:" + System.lineSeparator() + dates2);
+        System.out.println("After sorting:" + System.lineSeparator() + sorter.sortDates(dates2));
     }
 }
