@@ -9,6 +9,9 @@ import java.util.stream.Collectors;
 public class DateSorterImpl implements IDateSorter {
     @Override
     public Collection<LocalDate> sortDates(List<LocalDate> unsortedDates) {
+        if (unsortedDates == null) {
+            throw new RuntimeException("Unsorted dates is null");
+        }
         return unsortedDates.stream()
                 .sorted(new DateComparator())
                 .collect(Collectors.toList());
@@ -44,6 +47,5 @@ public class DateSorterImpl implements IDateSorter {
             }
             return firstDate.getYear() - secondDate.getYear();
         }
-
     }
 }
